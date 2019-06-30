@@ -14,4 +14,4 @@ kinit: "echo 'local, pas de kerberos'"
 
 env: "local"
 
-number_of_rows: 11
+# add tests vars

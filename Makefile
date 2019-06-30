@@ -28,5 +28,4 @@ remove-local-dag:
 run-dag-word-count:
 	curl -X POST localhost:8080/api/experimental/dags/word_count/dag_runs -H 'Cache-Control: no-cache' -H 'Content-Type: application/json' -d "{}"
 
-test-result:
-	docker-compose exec spark-worker /project/tests/checkFile.sh
+# add run tests
