@@ -26,4 +26,4 @@ remove-local-dag:
 	curl -X GET localhost:8080/admin/airflow/delete?dag_id=word_count
 
 run-dag-word-count:
-	curl -X POST localhost:8080/api/experimental/dags/word-count/dag_runs -H 'Cache-Control: no-cache' -H 'Content-Type: application/json'
+	curl -X POST localhost:8080/api/experimental/dags/word_count/dag_runs -H 'Cache-Control: no-cache' -H 'Content-Type: application/json' -d "{}"
