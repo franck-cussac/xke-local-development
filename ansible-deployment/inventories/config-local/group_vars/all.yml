@@ -13,3 +13,5 @@ input_file: "hdfs:///input.txt"
 kinit: "echo 'local, pas de kerberos'"
 
 env: "local"
+
+number_of_rows: 11

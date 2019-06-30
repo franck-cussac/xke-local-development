@@ -3,3 +3,4 @@
   become: yes
   roles:
     - deploy-word-count
+    - e2e-tests
