@@ -1,5 +1,0 @@
-- name: deploy word count
-  hosts: all
-  become: yes
-  roles:
-    - deploy-word-count
