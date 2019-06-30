@@ -21,6 +21,6 @@ get-into-spark-worker:
 	docker-compose exec spark-worker bash
 
 remove-local-dag:
-	docker exec -u root airflow rm -rf /project/dags/word-count-dag.py
-	docker exec -u root airflow rm -rf /usr/local/airflow/dags/word-count-dag.py
+	docker exec -u root xke-local-development_airflow_1 rm -rf /project/dags/word-count-dag.py
+	docker exec -u root xke-local-development_airflow_1 rm -rf /usr/local/airflow/dags/word-count-dag.py
 	curl -X GET localhost:8080/admin/airflow/delete?dag_id=smart_seo
