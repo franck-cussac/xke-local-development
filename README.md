@@ -1,5 +1,14 @@
-# Je veux pull les images dockers pour me préparer pour le talk de demain
+# Je veux être prêt pour le XKE
 
+## installer les logiciels aux bonnes versions
+
+docker-compose : https://docs.docker.com/compose/install/
+
+docker : https://phoenixnap.com/kb/how-to-install-docker-on-ubuntu-18-04 + https://docs.docker.com/install/linux/linux-postinstall/
+
+ansible : https://linuxconfig.org/how-to-install-ansible-on-ubuntu-18-04-bionic-beaver-linux paragraphe `Install Ansible from PPA repository`
+
+## pull les images docker
 Afin d'être sur d'avoir tout ce qu'il faut pour demain, vous n'avez qu'à taper :
 
 ```
