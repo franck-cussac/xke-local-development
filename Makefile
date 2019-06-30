@@ -17,6 +17,9 @@ get-into-airflow:
 get-into-spark-master:
 	docker-compose exec spark-master bash
 
+get-into-spark-worker:
+	docker-compose exec spark-worker bash
+
 remove-local-dag:
 	docker exec -u root airflow rm -rf /project/dags/word-count-dag.py
 	docker exec -u root airflow rm -rf /usr/local/airflow/dags/word-count-dag.py

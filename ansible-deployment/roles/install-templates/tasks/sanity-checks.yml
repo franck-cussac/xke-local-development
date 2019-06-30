@@ -9,7 +9,7 @@
     msg: "The jar file doesnt exist !"
   when: is_jar_exist.stat.exists == False
 
-- name: "check if {{ file_dag_deploy_name }} has been deployed in {{ app_directory }} directory"
+- name: "check if {{ file_dag }} has been deployed in {{ airflow_directory }} directory"
   stat:
     path: "{{ airflow_directory }}/{{ file_dag }}"
   register: is_dag_exist

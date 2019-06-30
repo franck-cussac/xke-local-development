@@ -82,10 +82,6 @@ services:
       - 8081
     env_file:
       - ./hadoop.env
-    cpus: "1"
-    mem_limit: 2048M
-    restart: "on-failure"
-
 
   hue:
     image: bde2020/hdfs-filebrowser:3.11
