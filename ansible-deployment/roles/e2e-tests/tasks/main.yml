@@ -4,9 +4,10 @@
     path: "/project/tests"
     state: directory
 
-- name: "create python script to test output"
+- name: "create script to test output"
   template:
-    src: "check-result.py"
-    dest: "/project/tests/check-result.py"
+    src: "checkFile.sh"
+    dest: "/project/tests/checkFile.sh"
+    mode: 0755
   when: inventory_hostname == 'xke-local-development_spark-worker_1'
 
