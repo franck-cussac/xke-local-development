@@ -1,0 +1,13 @@
+---
+- name: "ensure directories exist"
+  file:
+    path: "{{ item }}"
+    state: directory
+  with_items:
+    - "{{ airflow_directory }}"
+
+- name: "copy airflow pipeline to {{ app_directory }} directory"
+  template:
+    src: "{{ file_dag }}"
+    dest: "{{ airflow_directory }}/{{ file_dag }}"
+

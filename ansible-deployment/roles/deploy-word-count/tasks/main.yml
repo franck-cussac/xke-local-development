@@ -1,0 +1,14 @@
+---
+- import_tasks: ../../install-templates/tasks/install-dags.yml
+- import_tasks: ../../install-templates/tasks/install-jar.yml
+
+- name: "create fetch pool"
+  uri:
+    url: "{{ airflow_server_url }}/api/experimental/pools"
+    method: POST
+    body_format: json
+    body: "{\"name\": \"{{ pool_name }}\", \"slots\": 14, \"description\": \"pool resources for smart-seo\"}"
+    validate_certs: no
+  when: inventory_hostname != 'xke-local-development_spark-worker_1'
+
+- import_tasks: ../../install-templates/tasks/sanity-checks.yml

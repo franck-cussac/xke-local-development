@@ -1,0 +1,15 @@
+proxy_host: "proxy-lil"
+proxy_port: "80"
+
+airflow_directory: "/usr/local/airflow/dags"
+airflow_server_url: "http://localhost:8080"
+
+spark_home: "/spark"
+spark_submit: "{{ spark_home }}/bin/spark-submit"
+spark_options: "--master spark://spark-master:7077 --deploy-mode cluster"
+
+input_file: "hdfs:///input.txt"
+
+kinit: "echo 'local, pas de kerberos'"
+
+env: "local"

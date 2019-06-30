@@ -1,0 +1,19 @@
+---
+# tasks file for sanity checks
+- name: "check if {{ jar_name }} has been deployed in {{ app_directory }} directory"
+  stat:
+    path: "{{ app_directory }}/{{ jar_name }}"
+  register: is_jar_exist
+
+- fail:
+    msg: "The jar file doesnt exist !"
+  when: is_jar_exist.stat.exists == False
+
+- name: "check if {{ file_dag_deploy_name }} has been deployed in {{ app_directory }} directory"
+  stat:
+    path: "{{ airflow_directory }}/{{ file_dag }}"
+  register: is_dag_exist
+
+- fail:
+    msg: "The dag file doesnt exist !"
+  when: is_dag_exist.stat.exists == False

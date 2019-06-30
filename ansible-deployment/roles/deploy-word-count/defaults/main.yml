@@ -1,0 +1,27 @@
+hdfs_work_zone: "hdfs:///project/xke"
+
+input_file: "{{ hdfs_work_zone }}/book.txt"
+output_file: "{{ hdfs_work_zone }}/output.parquet"
+
+jar_name: "{{ artifact_id }}-{{ jar_version }}-{{ classifier }}{{ branch_name }}.jar"
+pool_name: "pool"
+artifact_id: "word-count"
+classifier: "shaded"
+jar_version: "0.0.1-SNAPSHOT"
+group_id: "xke.local"
+main_class: "{{ group_id }}.HelloWorld"
+
+app_directory: "/project/xke"
+jar_path: "{{ app_directory }}/{{ jar_name }}"
+file_dag: "word-count-dag.py"
+
+airflow_directory: "/project/dags"
+airflow_server_url: "https://localhost:8080"
+
+spark_home: "/usr/hdp/current/spark2-client"
+spark_submit: "{{ spark_home }}/bin/spark-submit"
+spark_options: "--master yarn --deploy-mode cluster"
+
+env: "pas local"
+
+branch_name: ""

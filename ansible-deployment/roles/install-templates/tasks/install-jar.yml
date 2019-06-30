@@ -1,0 +1,26 @@
+---
+- name: "ensure directories exist"
+  file:
+    path: "{{ item }}"
+    state: directory
+  with_items:
+    - "{{ app_directory }}"
+
+- name: "download {{ artifact_id }} jar to {{ jar_path }} directory"
+  maven_artifact:
+    group_id: "{{ group_id }}"
+    artifact_id: "{{ artifact_id }}"
+    classifier: "{{ classifier }}"
+    version: "{{ jar_version }}"
+    repository_url: "{{ artifactory_snapshot_url }}"
+    mode: 0644
+    verify_checksum: always
+    dest: "{{ jar_path }}"
+    extension: jar
+  when: env != 'local'
+
+- name: "copy {{ jar_name }} jar to {{ jar_path }} directory"
+  copy:
+    src: "files/{{ jar_name }}"
+    dest: "{{ jar_path }}"
+  when: env == 'local'
