@@ -15,8 +15,6 @@ app_directory: "/project/xke"
 jar_path: "{{ app_directory }}/{{ jar_name }}"
 file_dag: "word-count-dag.py"
 
-airflow_directory: "/project/dags"
-airflow_server_url: "https://localhost:8080"
 
 spark_home: "/usr/hdp/current/spark2-client"
 spark_submit: "{{ spark_home }}/bin/spark-submit"
