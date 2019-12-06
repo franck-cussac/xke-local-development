@@ -8,7 +8,7 @@ services:
       - POSTGRES_DB=airflow
 
   airflow:
-    image: puckel/docker-airflow:1.10.2
+    image: puckel/docker-airflow:1.10.6
     restart: always
     depends_on:
       - postgres
@@ -17,7 +17,6 @@ services:
       - EXECUTOR=Local
       - JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64
     volumes:
-      - spark_assembly:/spark/assembly/target/scala-2.10/jars
       - spark_jars:/spark/jars
       - spark_home:/spark/bin/
       - java_home:/usr/lib/jvm/java-8-openjdk-amd64
@@ -64,7 +63,6 @@ services:
       - 8888:8080
       - 7077:7077
     volumes:
-      - spark_assembly:/spark/assembly/target/scala-2.10/jars
       - spark_jars:/spark/jars
       - spark_home:/spark/bin/
       - java_home:/usr/lib/jvm/java-8-openjdk-amd64
@@ -93,5 +91,4 @@ services:
 volumes:
   spark_home:
   java_home:
-  spark_assembly:
   spark_jars:
