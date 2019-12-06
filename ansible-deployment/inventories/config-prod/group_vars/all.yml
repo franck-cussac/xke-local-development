@@ -1,0 +1,15 @@
+proxy_host: "proxy-prod"
+proxy_port: "80"
+
+airflow_directory: "/usr/local/airflow/dags"
+airflow_server_url: "https://production.prod"
+
+spark_home: "/spark"
+spark_submit: "{{ spark_home }}/bin/spark-submit"
+spark_options: "--master yarn --deploy-mode cluster"
+
+input_file: "hdfs:///input.txt"
+
+kinit: "echo 'prod, on fait un kinit'"
+
+env: "prod"
